@@ -1,0 +1,775 @@
+:root {
+
+    --bg-primary: #f5f7fa;
+    --bg-secondary: #ffffff;
+
+    --text-primary: #17202a;
+    --text-secondary: #6b7280;
+
+    --border: #e5e7eb;
+
+    --profit: #16805c;
+    --loss: #d64545;
+
+    --buy: #2563eb;
+    --sell: #dc2626;
+
+    --shadow:
+        0 4px 15px rgba(0, 0, 0, 0.04);
+
+}
+
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        var(--bg-primary);
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.app-container {
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 32px;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.dashboard-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 28px;
+
+}
+
+
+.dashboard-header h1 {
+
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+}
+
+
+.dashboard-header p {
+
+    margin: 6px 0 0;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 14px;
+
+}
+
+
+.header-info {
+
+    font-size: 14px;
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+/* ================= FILTER ================= */
+
+.filter-section {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    align-items: end;
+
+    background:
+        var(--bg-secondary);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.filter-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.filter-group label {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+input,
+select {
+
+    height: 38px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 7px;
+
+    background:
+        #ffffff;
+
+    padding:
+        0 11px;
+
+    font-size: 13px;
+
+    color:
+        var(--text-primary);
+
+    outline: none;
+
+}
+
+
+input:focus,
+select:focus {
+
+    border-color:
+        #9ca3af;
+
+}
+
+
+#searchInput {
+
+    width: 180px;
+
+}
+
+
+.btn-secondary {
+
+    height: 38px;
+
+    padding:
+        0 16px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 7px;
+
+    background:
+        #ffffff;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        #f3f4f6;
+
+}
+
+
+/* ================= KPI ================= */
+
+.kpi-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+
+}
+
+
+.kpi-card {
+
+    background:
+        var(--bg-secondary);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-shadow:
+        var(--shadow);
+
+    min-height: 100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+
+.kpi-card span {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.kpi-card strong {
+
+    margin-top: 12px;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+}
+
+
+.profit {
+
+    color:
+        var(--profit) !important;
+
+}
+
+
+.loss {
+
+    color:
+        var(--loss) !important;
+
+}
+
+
+/* ================= PANEL ================= */
+
+.panel {
+
+    background:
+        var(--bg-secondary);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    box-shadow:
+        var(--shadow);
+
+    overflow: hidden;
+
+}
+
+
+.panel-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 22px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.panel-header h2 {
+
+    margin: 0;
+
+    font-size: 17px;
+
+}
+
+
+.panel-header p {
+
+    margin: 5px 0 0;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 12px;
+
+}
+
+
+#tableResultCount {
+
+    font-size: 12px;
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+/* ================= TABLE ================= */
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+thead {
+
+    background:
+        #f8fafc;
+
+}
+
+
+th {
+
+    padding:
+        13px 22px;
+
+    text-align: left;
+
+    font-size: 12px;
+
+    color:
+        var(--text-secondary);
+
+    font-weight: 600;
+
+    border-bottom:
+        1px solid var(--border);
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+
+th:hover {
+
+    background:
+        #f1f5f9;
+
+}
+
+
+.sort-icon {
+
+    margin-left: 4px;
+
+    opacity: 0.5;
+
+}
+
+
+td {
+
+    padding:
+        15px 22px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    font-size: 13px;
+
+}
+
+
+tbody tr:hover {
+
+    background:
+        #fafafa;
+
+}
+
+
+.side-badge {
+
+    display: inline-block;
+
+    padding:
+        4px 9px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.side-badge.buy {
+
+    color:
+        var(--buy);
+
+    background:
+        #eff6ff;
+
+}
+
+
+.side-badge.sell {
+
+    color:
+        var(--sell);
+
+    background:
+        #fef2f2;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 24px;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 11px;
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+
+    .kpi-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .app-container {
+
+        padding: 18px;
+
+    }
+
+
+    .dashboard-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+    .kpi-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .kpi-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .filter-section {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    #searchInput {
+
+        width: 100%;
+
+    }
+
+}
+
+/* ================= ACCOUNT SETTINGS ================= */
+
+.account-settings {
+
+    display: flex;
+
+    align-items: end;
+
+    gap: 18px;
+
+    background:
+        var(--bg-secondary);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.account-title {
+
+    margin-right: auto;
+
+}
+
+
+.account-title h2 {
+
+    margin: 0;
+
+    font-size: 16px;
+
+}
+
+
+.account-title p {
+
+    margin: 5px 0 0;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 12px;
+
+}
+
+
+.capital-control {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.capital-control label {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+.capital-input-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    height: 38px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 7px;
+
+    background:
+        #ffffff;
+
+    overflow: hidden;
+
+}
+
+
+.capital-input-wrapper span {
+
+    padding-left: 11px;
+
+    font-size: 13px;
+
+    color:
+        var(--text-secondary);
+
+    font-weight: 600;
+
+}
+
+
+.capital-input-wrapper input {
+
+    border: none;
+
+    outline: none;
+
+    width: 180px;
+
+    height: 100%;
+
+}
+
+
+.btn-primary {
+
+    height: 38px;
+
+    padding:
+        0 18px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background:
+        #17202a;
+
+    color:
+        #ffffff;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.btn-primary:hover {
+
+    opacity: 0.9;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .account-settings {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+
+    .account-title {
+
+        margin-right: 0;
+
+    }
+
+}
